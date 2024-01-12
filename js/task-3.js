@@ -1,26 +1,82 @@
 'use strict';
 
-const profile = {
-    username: "Jacob",
-    playTime: 300,
+const sortByDescendingFriendCount = (users) => {
+    return users.toSorted((user1, user2) => user2.friends.length -  user1.friends.length)
+}
 
-    changeUsername(newName) {
-        this.username = newName;
-    }, 
-
-    updatePlayTime(hours) {
-        this.playTime += hours;
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
     },
-
-    getInfo() {
-        return `${this.username} has ${this.playTime} active hours!`
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
     }
-};
-
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
-
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+  ])
+);
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
